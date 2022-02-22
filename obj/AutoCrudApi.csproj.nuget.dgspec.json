@@ -39,6 +39,28 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Firebend.AutoCrud.Core": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Firebend.AutoCrud.EntityFramework": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Firebend.AutoCrud.EntityFramework.Elastic": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Firebend.AutoCrud.Web": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"

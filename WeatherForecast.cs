@@ -1,7 +1,11 @@
+using Firebend.AutoCrud.Core.Interfaces.Models;
+
 namespace AutoCrudApi;
 
-public class WeatherForecast
+public class WeatherForecast: IEntity<Guid>
 {
+    public Guid Id { get; set; }
+    
     public DateTime Date { get; set; }
 
     public int TemperatureC { get; set; }
