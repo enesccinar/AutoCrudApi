@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AutoCrudApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220222183343_CreateTable_WeatherForecasts")]
+    [Migration("20220314005833_CreateTable_WeatherForecasts")]
     partial class CreateTable_WeatherForecasts
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

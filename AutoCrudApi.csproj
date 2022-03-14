@@ -7,15 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Firebend.AutoCrud.Core" Version="3.2.0" />
+    <PackageReference Include="Firebend.AutoCrud.Core" Version="4.1.0" />
     <PackageReference Include="Firebend.AutoCrud.EntityFramework" Version="3.2.0" />
     <PackageReference Include="Firebend.AutoCrud.EntityFramework.Elastic" Version="3.2.0" />
-    <PackageReference Include="Firebend.AutoCrud.Web" Version="3.2.0" />
+    <PackageReference Include="Firebend.AutoCrud.Mongo" Version="4.1.0" />
+    <PackageReference Include="Firebend.AutoCrud.Web" Version="4.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers" />
   </ItemGroup>
 
 </Project>

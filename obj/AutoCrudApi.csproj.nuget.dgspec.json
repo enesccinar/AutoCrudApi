@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/enescinar/Projects/AutoCrudApi/AutoCrudApi.csproj": {}
+    "/Users/tib3ria/Projects/Firebend/AutoCrudApi/AutoCrudApi.csproj": {}
   },
   "projects": {
-    "/Users/enescinar/Projects/AutoCrudApi/AutoCrudApi.csproj": {
+    "/Users/tib3ria/Projects/Firebend/AutoCrudApi/AutoCrudApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/enescinar/Projects/AutoCrudApi/AutoCrudApi.csproj",
+        "projectUniqueName": "/Users/tib3ria/Projects/Firebend/AutoCrudApi/AutoCrudApi.csproj",
         "projectName": "AutoCrudApi",
-        "projectPath": "/Users/enescinar/Projects/AutoCrudApi/AutoCrudApi.csproj",
-        "packagesPath": "/Users/enescinar/.nuget/packages/",
-        "outputPath": "/Users/enescinar/Projects/AutoCrudApi/obj/",
+        "projectPath": "/Users/tib3ria/Projects/Firebend/AutoCrudApi/AutoCrudApi.csproj",
+        "packagesPath": "/Users/tib3ria/.nuget/packages/",
+        "outputPath": "/Users/tib3ria/Projects/Firebend/AutoCrudApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/enescinar/.nuget/NuGet/NuGet.Config"
+          "/Users/tib3ria/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -41,7 +41,7 @@
           "dependencies": {
             "Firebend.AutoCrud.Core": {
               "target": "Package",
-              "version": "[3.2.0, )"
+              "version": "[4.1.0, )"
             },
             "Firebend.AutoCrud.EntityFramework": {
               "target": "Package",
@@ -51,9 +51,13 @@
               "target": "Package",
               "version": "[3.2.0, )"
             },
+            "Firebend.AutoCrud.Mongo": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
             "Firebend.AutoCrud.Web": {
               "target": "Package",
-              "version": "[3.2.0, )"
+              "version": "[4.1.0, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -76,6 +80,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.0, 6.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -84,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100-preview.1.22110.4/RuntimeIdentifierGraph.json"
         }
       }
     }

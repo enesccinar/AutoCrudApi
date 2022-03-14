@@ -7,6 +7,8 @@ using Firebend.AutoCrud.Core.Models.Searching;
 using Firebend.AutoCrud.EntityFramework;
 using Firebend.AutoCrud.Web;
 using Microsoft.EntityFrameworkCore;
+using Firebend.AutoCrud.Mongo;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,6 +43,35 @@ builder.Services.UsingEfCrud(ef =>
         );
     }
 );
+
+builder.Services.UsingMongoCrud(builder.Configuration.GetConnectionString("AppSettingsMongoConnection"),
+    true, mongo =>
+    {
+        mongo.AddEntity<Guid, RainForecast>(forecast =>
+            forecast.WithDefaultDatabase("AutoCrudApi")
+                .WithCollection("RainForecasts")
+                .AddCrud(crud =>
+                    crud.WithCrud()
+                        .WithSearchHandler<EntitySearchRequest>((forecasts, request) =>
+                            {
+                                if (!string.IsNullOrWhiteSpace(request?.Search))
+                                    forecasts = forecasts.Where(wf =>
+                                        wf.Summary != null && wf.Summary.ToUpper()
+                                            .Contains(request.Search.ToUpper()));
+
+                                return forecasts;
+                            }
+                        ))
+                .AddControllers(c =>
+                {
+                    c.WithAllControllers(true) // `true` activates the `/all` endpoint
+                        .WithOpenApiGroupName("RainForecasts");
+                }));
+    });
+
+// this prevents having to wrap POST bodies with `entity`
+// like `{ "entity": { "key": "value" } }`
+builder.Services.Configure<ApiBehaviorOptions>(o => o.SuppressInferBindingSourcesForParameters = true);
 
 builder.Services.AddControllers().AddFirebendAutoCrudWeb(builder.Services);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
